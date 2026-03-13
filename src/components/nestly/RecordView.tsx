@@ -97,7 +97,7 @@ export function RecordView({ onOpenAI, kickData, nextAppointment, setNextAppoint
           <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
             <PopoverTrigger asChild>
               <button className="flex items-center justify-center flex-1 py-2 font-bold text-[#3F3A39] hover:bg-[#FAF8F6] rounded-lg transition group">
-                  <CalendarIcon className="w-4 h-4 mr-2 text-[#8B6F6A]" />
+                  <CalendarIcon className="w-4 h-4 mr-2 text-[#9FB6A0]" />
                   {formatDate(currentDate)}
               </button>
             </PopoverTrigger>
@@ -164,7 +164,7 @@ export function RecordView({ onOpenAI, kickData, nextAppointment, setNextAppoint
 
       {/* NEW: Nutrition Dashboard */}
       <section className="bg-[#F4D6C9]/20 rounded-2xl p-4 border border-[#F4D6C9]">
-          <h3 className="font-bold text-[#8B6F6A] mb-3 text-sm uppercase tracking-wider flex items-center">
+          <h3 className="font-bold text-[#9FB6A0] mb-3 text-sm uppercase tracking-wider flex items-center">
               <PieChart className="mr-2 w-4 h-4" />
               今日營養攝取
           </h3>
@@ -231,7 +231,7 @@ export function RecordView({ onOpenAI, kickData, nextAppointment, setNextAppoint
             {/* AI Feature 6: Meal Analysis */}
             <button 
               onClick={handleMealAnalysis}
-              className="text-[10px] bg-[#E6B7B3]/10 text-[#8B6F6A] border border-[#E6B7B3] px-2 py-1 rounded-md font-bold hover:bg-[#E6B7B3]/20 transition flex items-center shadow-sm"
+              className="text-[10px] bg-[#E6B7B3]/10 text-[#9FB6A0] border border-[#E6B7B3] px-2 py-1 rounded-md font-bold hover:bg-[#E6B7B3]/20 transition flex items-center shadow-sm"
             >
               <Calculator className="mr-1 w-3 h-3" />
               AI 營養計算
@@ -247,7 +247,7 @@ export function RecordView({ onOpenAI, kickData, nextAppointment, setNextAppoint
             </div>
           </div>
           {/* Add Button */}
-          <button className="w-full py-3 bg-[#FAF8F6] hover:bg-[#F4D6C9]/50 text-[#8B6F6A] font-medium text-sm transition flex items-center justify-center">
+          <button className="w-full py-3 bg-[#FAF8F6] hover:bg-[#F4D6C9]/50 text-[#9FB6A0] font-medium text-sm transition flex items-center justify-center">
             <Plus className="mr-2 w-4 h-4" />
             新增飲食
           </button>

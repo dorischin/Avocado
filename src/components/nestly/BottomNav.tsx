@@ -130,7 +130,7 @@ function NavItem({ label, icon, isActive, onClick }: NavItemProps) {
 
 export function BottomNav({ currentView, onChangeView }: BottomNavProps) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 max-w-[420px] mx-auto z-40 bg-white box-border content-stretch flex items-start justify-between pb-0 pt-px px-0 relative w-full shadow-[0_-5px_20px_rgba(0,0,0,0.02)]">
+    <div className="absolute bottom-0 left-0 right-0 z-40 bg-white box-border content-stretch flex items-start justify-between pb-0 pt-px px-0 w-full shadow-[0_-5px_20px_rgba(0,0,0,0.05)]">
       <div aria-hidden="true" className="absolute border-t border-[#E5DED9] inset-0 pointer-events-none" />
       
       <NavItem 

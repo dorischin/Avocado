@@ -36,7 +36,7 @@ export function ShopModal({ isOpen, onClose, userPoints, ownedItems, equippedIte
         <div className="flex justify-between items-center mb-4 sticky top-0 bg-white pb-2 border-b border-[#E5DED9] z-10">
           <div>
             <h3 className="text-lg font-bold text-[#3F3A39] flex items-center">
-              <Store className="text-[#8B6F6A] mr-2 w-5 h-5" />
+              <Store className="text-[#9FB6A0] mr-2 w-5 h-5" />
               寶寶商店
             </h3>
             <div className="text-xs text-[#E8C9A8] font-bold flex items-center mt-1">

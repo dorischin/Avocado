@@ -49,7 +49,7 @@
   --chart-1: #E6B7B3; /* Dusty Blush */
   --chart-2: #9FB6A0; /* Sage Green */
   --chart-3: #F4D6C9; /* Soft Peach */
-  --chart-4: #8B6F6A; /* Rose Brown */
+  --chart-4: #9FB6A0; /* Rose Brown */
   --chart-5: #E8C9A8; /* Warning */
   
   --radius: 0.625rem;
@@ -67,7 +67,7 @@
   --brand-dusty-blush: #E6B7B3;
   --brand-soft-peach: #F4D6C9;
   --brand-sage-green: #9FB6A0;
-  --brand-rose-brown: #8B6F6A;
+  --brand-rose-brown: #9FB6A0;
   --state-warning: #E8C9A8;
   --state-error: #C38A85;
   --state-disabled: #D6D0CC;
@@ -86,7 +86,7 @@
   --popover-foreground: #FAF8F6;
   --primary: #E6B7B3;
   --primary-foreground: #3F3A39;
-  --secondary: #8B6F6A;
+  --secondary: #9FB6A0;
   --secondary-foreground: #FAF8F6;
   --muted: #6F6765;
   --muted-foreground: #9B9491;

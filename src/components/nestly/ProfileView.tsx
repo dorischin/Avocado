@@ -34,7 +34,7 @@ export function ProfileView({ onOpenAI, userData }: ProfileViewProps) {
           
           <div className="flex justify-between items-start relative z-10 mb-4">
               <div className="flex items-center">
-                  <div className="w-16 h-16 rounded-full bg-[#F4D6C9] flex items-center justify-center text-[#8B6F6A] text-2xl border-2 border-white shadow-sm mr-4">
+                  <div className="w-16 h-16 rounded-full bg-[#F4D6C9] flex items-center justify-center text-[#9FB6A0] text-2xl border-2 border-white shadow-sm mr-4">
                       <User className="w-8 h-8" />
                   </div>
                   <div>
@@ -93,11 +93,11 @@ export function ProfileView({ onOpenAI, userData }: ProfileViewProps) {
               <div className="flex items-center justify-between">
                   <div>
                       <h4 className="font-bold text-[#3F3A39] text-sm">靈感取名</h4>
-                      <p className="text-xs text-[#8B6F6A] mt-1">幫寶寶想個可愛乳名</p>
+                      <p className="text-xs text-[#9FB6A0] mt-1">幫寶寶想個可愛乳名</p>
                   </div>
                   <button 
                     onClick={handleNameGenerator}
-                    className="bg-white text-[#8B6F6A] hover:text-[#3F3A39] text-xs font-bold py-2 px-4 rounded-full shadow-sm transition"
+                    className="bg-white text-[#9FB6A0] hover:text-[#3F3A39] text-xs font-bold py-2 px-4 rounded-full shadow-sm transition"
                   >
                       ✨ AI 幫我發想
                   </button>

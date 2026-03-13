@@ -77,31 +77,32 @@ export function OnboardingView({
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F6] flex flex-col items-center justify-center p-6 animate-in fade-in duration-700">
-      <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[#F0EDE8] md:p-8 flex flex-col items-center justify-center font-sans">
+      <div className="w-full max-w-[420px] bg-[#FAF8F6] shadow-2xl min-h-screen md:min-h-[650px] md:h-[85vh] md:max-h-[850px] md:rounded-[40px] relative overflow-hidden flex flex-col border-[6px] border-transparent md:border-[#FFFFFF]">
         {/* Background decorative circles */}
         <div className="absolute top-0 right-0 w-40 h-40 bg-[#E6B7B3] rounded-full opacity-20 blur-3xl -mr-10 -mt-10"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#F4D6C9] rounded-full opacity-20 blur-3xl -ml-10 -mb-10"></div>
 
-        {/* Progress Indicator */}
-        <div className="flex justify-center mb-8 space-x-2 relative z-10">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i <= step
-                  ? "w-8 bg-[#9FB6A0]"
-                  : "w-2 bg-[#E5DED9]"
-              }`}
-            />
-          ))}
-        </div>
+        <div className="flex-1 overflow-y-auto overflow-x-hidden p-8 flex flex-col animate-in fade-in duration-700 no-scrollbar">
+          {/* Progress Indicator */}
+          <div className="flex justify-center mb-8 space-x-2 relative z-10 mt-4">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i <= step
+                    ? "w-8 bg-[#9FB6A0]"
+                    : "w-2 bg-[#E5DED9]"
+                }`}
+              />
+            ))}
+          </div>
 
-        <div className="relative z-10 min-h-[320px] flex flex-col">
-          {step === 1 && (
-            <div className="flex-1 flex flex-col justify-center animate-in slide-in-from-right-8 duration-500">
-              <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-[#F4D6C9]/30 rounded-full flex items-center justify-center mx-auto mb-4 text-[#8B6F6A] shadow-sm">
+          <div className="relative z-10 flex-1 flex flex-col">
+            {step === 1 && (
+              <div className="flex-1 flex flex-col justify-center animate-in slide-in-from-right-8 duration-500">
+                <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-[#F4D6C9]/30 rounded-full flex items-center justify-center mx-auto mb-4 text-[#9FB6A0] shadow-sm">
                   <User className="w-10 h-10" />
                 </div>
                 <h2 className="text-2xl font-bold text-[#3F3A39]">
@@ -287,7 +288,7 @@ export function OnboardingView({
               className={`w-full py-3.5 rounded-xl font-bold shadow-lg shadow-[#E6B7B3]/30 flex items-center justify-center transition-all transform active:scale-95 ${
                 step === 1 && !formData.nickname
                   ? "bg-[#D6D0CC] text-white cursor-not-allowed"
-                  : "bg-[#8B6F6A] text-white hover:bg-[#7a615d] hover:shadow-xl"
+                  : "bg-[#9FB6A0] text-white hover:bg-[#859d86] hover:shadow-xl"
               }`}
               disabled={step === 1 && !formData.nickname}
             >
@@ -300,6 +301,7 @@ export function OnboardingView({
               )}
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>

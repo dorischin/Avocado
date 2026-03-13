@@ -65,7 +65,7 @@ export function TasksView({
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#E8C9A8] rounded-full opacity-20 blur-2xl -ml-6 -mb-6"></div>
 
         <div className="relative w-36 h-36 mb-5 z-10 baby-container inline-block">
-          <ImageWithFallback src="https://placehold.co/144x144/E6B7B3/8B6F6A?text=Baby" alt="Baby" className="rounded-full shadow-xl border-4 border-white object-cover w-full h-full" />
+          <ImageWithFallback src="https://placehold.co/144x144/E6B7B3/9FB6A0?text=Baby" alt="Baby" className="rounded-full shadow-xl border-4 border-white object-cover w-full h-full" />
           
           {/* Accessories Overlays */}
           {equippedItems.head && (
@@ -96,7 +96,7 @@ export function TasksView({
         {/* Shop Button */}
         <button 
           onClick={() => setIsShopOpen(true)}
-          className="z-10 bg-white text-[#8B6F6A] border border-[#E6B7B3] hover:bg-[#E6B7B3] hover:text-white font-bold py-2 px-5 rounded-full shadow-md transition flex items-center"
+          className="z-10 bg-white text-[#9FB6A0] border border-[#E6B7B3] hover:bg-[#E6B7B3] hover:text-white font-bold py-2 px-5 rounded-full shadow-md transition flex items-center"
         >
             <Store className="mr-2 w-4 h-4" />
             寶寶商店
@@ -136,7 +136,7 @@ export function TasksView({
               className={`text-xs px-4 py-1.5 rounded-full font-bold transition shadow-sm ${
                 completedTasks.has('kick') 
                   ? 'bg-[#D6D0CC] text-white cursor-default'
-                  : 'bg-[#E6B7B3] text-[#8B6F6A] hover:bg-[#d4a09c] hover:text-white'
+                  : 'bg-[#E6B7B3] text-[#9FB6A0] hover:bg-[#d4a09c] hover:text-white'
               }`}
             >
               {completedTasks.has('kick') ? '已完成' : '去紀錄 (+10 BP)'}
@@ -158,7 +158,7 @@ export function TasksView({
               className={`text-xs px-4 py-1.5 rounded-full font-bold transition shadow-sm ${
                 completedTasks.has('mood') 
                   ? 'bg-[#D6D0CC] text-white cursor-default'
-                  : 'bg-[#E6B7B3] text-[#8B6F6A] hover:bg-[#d4a09c] hover:text-white'
+                  : 'bg-[#E6B7B3] text-[#9FB6A0] hover:bg-[#d4a09c] hover:text-white'
               }`}
             >
               {completedTasks.has('mood') ? '已完成' : '去紀錄 (+5 BP)'}

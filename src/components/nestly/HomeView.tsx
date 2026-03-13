@@ -67,19 +67,19 @@ export function HomeView({ onOpenAI, setKickCount, kickCount, kickData, nextAppo
           今日任務進度
         </h3>
         <div className="flex items-center justify-between space-x-2">
-          <button className="flex-1 flex flex-col items-center p-2 rounded-xl bg-[#9FB6A0]/10 text-[#9FB6A0] hover:bg-[#9FB6A0]/20 transition">
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1 shadow-sm text-[#9FB6A0]">
+          <button className="flex-1 flex flex-col items-center p-2 rounded-xl bg-[#6A2819]/10 text-[#6A2819] hover:bg-[#6A2819]/20 transition">
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1 shadow-sm text-[#6A2819]">
               <Check className="w-4 h-4" />
             </div>
             <span className="text-xs font-medium">飲食</span>
           </button>
-          <button className="flex-1 flex flex-col items-center p-2 rounded-xl bg-[#F4D6C9]/30 text-[#8B6F6A] hover:bg-[#F4D6C9]/50 transition">
+          <button className="flex-1 flex flex-col items-center p-2 rounded-xl bg-[#F4D6C9]/30 text-[#6A2819] hover:bg-[#F4D6C9]/50 transition">
             <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1 shadow-sm border-2 border-[#F4D6C9] text-[#9B9491] text-xs font-bold">
               2/10
             </div>
             <span className="text-xs font-medium">胎動</span>
           </button>
-          <button className="flex-1 flex flex-col items-center p-2 rounded-xl bg-[#E6B7B3]/10 text-[#8B6F6A] hover:bg-[#E6B7B3]/20 transition">
+          <button className="flex-1 flex flex-col items-center p-2 rounded-xl bg-[#E6B7B3]/10 text-[#6A2819] hover:bg-[#E6B7B3]/20 transition">
             <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1 shadow-sm border-2 border-[#E6B7B3] text-[#9B9491]">
               <Plus className="w-4 h-4" />
             </div>
@@ -93,7 +93,7 @@ export function HomeView({ onOpenAI, setKickCount, kickCount, kickData, nextAppo
         <div className="p-4 border-b border-[#E5DED9]">
           <div className="flex justify-between items-center mb-3">
             <h3 className="font-bold text-[#3F3A39] flex items-center">
-              <Utensils className="text-[#8B6F6A] mr-2 w-4 h-4" />
+              <Utensils className="text-[#6A2819] mr-2 w-4 h-4" />
               飲食日記
             </h3>
             <span className="bg-[#C38A85]/10 text-[#C38A85] text-xs px-2 py-1 rounded-full">未完成</span>
@@ -106,12 +106,12 @@ export function HomeView({ onOpenAI, setKickCount, kickCount, kickData, nextAppo
             <div className="flex-1 space-y-2">
               <div className="flex space-x-2">
                 {['早餐', '午餐', '晚餐'].map(meal => (
-                  <button key={meal} className="flex-1 py-1 text-xs border border-[#E5DED9] rounded-full hover:bg-[#F4D6C9] hover:border-[#E6B7B3] hover:text-[#8B6F6A] transition text-[#6F6765]">
+                  <button key={meal} className="flex-1 py-1 text-xs border border-[#E5DED9] rounded-full hover:bg-[#F4D6C9] hover:border-[#E6B7B3] hover:text-[#6A2819] transition text-[#6F6765]">
                     {meal}
                   </button>
                 ))}
               </div>
-              <button className="w-full py-1 text-xs border border-[#E5DED9] rounded-full hover:bg-[#F4D6C9] hover:border-[#E6B7B3] hover:text-[#8B6F6A] transition text-[#6F6765]">
+              <button className="w-full py-1 text-xs border border-[#E5DED9] rounded-full hover:bg-[#F4D6C9] hover:border-[#E6B7B3] hover:text-[#6A2819] transition text-[#6F6765]">
                 點心
               </button>
             </div>
@@ -120,7 +120,7 @@ export function HomeView({ onOpenAI, setKickCount, kickCount, kickData, nextAppo
             className="bg-[#F4D6C9]/30 p-3 rounded-lg flex items-start space-x-3 cursor-pointer hover:bg-[#F4D6C9]/50 transition" 
             onClick={handleDietAdvice}
           >
-            <div className="mt-0.5 text-[#8B6F6A]"><Bot className="w-4 h-4" /></div>
+            <div className="mt-0.5 text-[#6A2819]"><Bot className="w-4 h-4" /></div>
             <div className="flex-1">
               <p className="text-sm text-[#3F3A39] font-medium">✨ AI 飲食建議</p>
               <p className="text-xs text-[#6F6765] mt-0.5">今日蛋白質攝取偏低喔～建議補充一顆水煮蛋或一杯豆漿！</p>
@@ -140,10 +140,7 @@ export function HomeView({ onOpenAI, setKickCount, kickCount, kickData, nextAppo
             </h3>
             <p className="text-xs text-[#6F6765] mt-1">今日目標：10 次</p>
           </div>
-          <div className="text-right">
-            <span className="text-3xl font-bold text-[#3F3A39]">{kickCount}</span>
-            <span className="text-xs text-[#6F6765] ml-1">次</span>
-          </div>
+          <div className="text-right"><span className="text-3xl font-bold text-[#3F3A39]">{kickCount}</span><span className="text-xs text-[#6F6765] ml-1">次</span></div>
         </div>
         <div className="flex items-end space-x-4">
           <div className="flex-1 h-[100px] min-w-0 relative">
@@ -208,7 +205,7 @@ export function HomeView({ onOpenAI, setKickCount, kickCount, kickData, nextAppo
             <BookOpen className="text-[#E6B7B3] mr-2 w-5 h-5" />
             孕期時光機
           </h3>
-          <span className="bg-[#E6B7B3]/10 text-[#8B6F6A] text-xs px-3 py-1 rounded-full font-medium">
+          <span className="bg-[#E6B7B3]/10 text-[#6A2819] text-xs px-3 py-1 rounded-full font-medium">
              📍 懷孕初期 (0-13週)
           </span>
         </div>
@@ -226,7 +223,7 @@ export function HomeView({ onOpenAI, setKickCount, kickCount, kickData, nextAppo
               <p className="text-xs text-[#6F6765] mt-1 leading-relaxed">
                  重要原因：確認胚胎位置、胎兒心跳及是否為多胞胎。
               </p>
-              <div className="mt-2 flex items-center text-xs text-[#9FB6A0] bg-[#9FB6A0]/10 px-2 py-1 rounded-md w-fit">
+              <div className="mt-2 flex items-center text-xs text-[#6A2819] bg-[#6A2819]/10 px-2 py-1 rounded-md w-fit">
                  <Check className="w-3 h-3 mr-1" /> App提醒：已記錄心跳
               </div>
            </div>

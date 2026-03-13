@@ -98,7 +98,15 @@ export default function App() {
 
   // If no user data, show onboarding
   if (!userData) {
-    return <OnboardingView onComplete={handleOnboardingComplete} />;
+    return (
+      <>
+        <style>{`
+          .no-scrollbar::-webkit-scrollbar { display: none; }
+          .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        `}</style>
+        <OnboardingView onComplete={handleOnboardingComplete} />
+      </>
+    );
   }
 
   const weeks = userData.pregnancyWeeks || 16;
@@ -134,7 +142,7 @@ export default function App() {
             <div>
               <h1 className="text-2xl font-bold text-[#3F3A39]">懷孕 {weeks} 週</h1>
               <p className="text-sm text-[#3F3A39]/80 mt-1">今天 Baby 是酪梨🥑大小</p>
-              <div className="inline-block mt-2 bg-white/40 px-2 py-0.5 rounded text-xs text-[#8B6F6A] font-bold shadow-sm">
+              <div className="inline-block mt-2 bg-white/40 px-2 py-0.5 rounded text-xs text-[#9FB6A0] font-bold shadow-sm">
                 預產星座: {zodiac}
               </div>
               
@@ -143,7 +151,7 @@ export default function App() {
                    const prompt = `我現在懷孕${weeks}週，寶寶大概是酪梨大小。請以「肚子裡的寶寶」的第一人稱視角，寫一段約50-80字的可愛短訊給媽媽（${userData.nickname}）。語氣要超級可愛、撒嬌、溫暖，提到我最近的辛苦（例如腰痠或孕吐）並給我鼓勵。請用繁體中文。`;
                    handleOpenAI("來自寶寶的悄悄話", prompt);
                 }}
-                className="mt-2 bg-white/60 hover:bg-white text-[#8B6F6A] text-xs font-bold py-1.5 px-3 rounded-full transition flex items-center shadow-sm backdrop-blur-sm sparkle-btn"
+                className="mt-2 bg-white/60 hover:bg-white text-[#9FB6A0] text-xs font-bold py-1.5 px-3 rounded-full transition flex items-center shadow-sm backdrop-blur-sm sparkle-btn"
               >
                 <MessageCircle className="mr-1.5 w-3 h-3" />
                 聽聽寶寶說什麼
@@ -204,7 +212,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F6] font-sans text-[#3F3A39] antialiased flex justify-center">
+    <div className="min-h-screen bg-[#F0EDE8] md:p-8 font-sans text-[#3F3A39] antialiased flex justify-center items-center">
       <style>{`
         .sparkle-btn {
           position: relative;
@@ -225,50 +233,61 @@ export default function App() {
           0% { transform: translateX(-100%) rotate(45deg); }
           100% { transform: translateX(100%) rotate(45deg); }
         }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
       `}</style>
-      <div className="w-full max-w-[420px] bg-white shadow-2xl min-h-screen relative pb-[90px]">
+      <div className="w-full max-w-[420px] bg-[#FAF8F6] shadow-2xl min-h-screen md:min-h-[650px] md:h-[85vh] md:max-h-[850px] md:rounded-[40px] relative overflow-hidden flex flex-col border-[6px] border-transparent md:border-[#FFFFFF]">
         
-        {renderHeader()}
+        <div className="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar pb-[90px]">
+          {renderHeader()}
 
-        <main>
-          {currentView === 'view-home' && (
-            <HomeView 
-              onOpenAI={handleOpenAI} 
-              setKickCount={handleKickUpdate}
-              kickCount={kickCount}
-              kickData={kickData}
-              nextAppointment={nextAppointment}
-              userData={userData}
-            />
-          )}
-          {currentView === 'view-record' && (
-            <RecordView 
-              onOpenAI={handleOpenAI}
-              kickData={kickData}
-              nextAppointment={nextAppointment}
-              setNextAppointment={setNextAppointment}
-              userData={userData}
-            />
-          )}
-          {currentView === 'view-tasks' && (
-            <TasksView 
-              onOpenAI={handleOpenAI}
-              userPoints={userPoints}
-              ownedItems={ownedItems}
-              equippedItems={equippedItems}
-              onBuyItem={handleBuyItem}
-              onEquipItem={handleEquipItem}
-              onTaskReward={handleTaskReward}
-              userData={userData}
-            />
-          )}
-          {currentView === 'view-profile' && (
-            <ProfileView 
-              onOpenAI={handleOpenAI}
-              userData={userData}
-            />
-          )}
-        </main>
+          <main>
+            {currentView === 'view-home' && (
+              <HomeView 
+                onOpenAI={handleOpenAI} 
+                setKickCount={handleKickUpdate}
+                kickCount={kickCount}
+                kickData={kickData}
+                nextAppointment={nextAppointment}
+                userData={userData}
+              />
+            )}
+            {currentView === 'view-record' && (
+              <RecordView 
+                onOpenAI={handleOpenAI}
+                kickData={kickData}
+                nextAppointment={nextAppointment}
+                setNextAppointment={setNextAppointment}
+                userData={userData}
+              />
+            )}
+            {currentView === 'view-tasks' && (
+              <TasksView 
+                onOpenAI={handleOpenAI}
+                userPoints={userPoints}
+                ownedItems={ownedItems}
+                equippedItems={equippedItems}
+                onBuyItem={handleBuyItem}
+                onEquipItem={handleEquipItem}
+                onTaskReward={handleTaskReward}
+                userData={userData}
+              />
+            )}
+            {currentView === 'view-profile' && (
+              <ProfileView 
+                onOpenAI={handleOpenAI}
+                userData={userData}
+              />
+            )}
+          </main>
+        </div>
 
         <BottomNav currentView={currentView} onChangeView={setCurrentView} />
 
